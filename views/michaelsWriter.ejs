@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- Author: Dawn Dean JS for Share Button on the writer ----->
+<!-- Author: Michael Walton - HTML & CSS -->
+<html>
+<head>
+  <title>Writer | Start Your Story</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/css/quickWriter.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="/scripts/quick.js"></script>
+</head>
+
+<div>
+<button class="downBtn" onclick="navigation(0)">Down</button>
+<button class="upBtn" onclick="navigation(1)">Up</button>
+<button class="bottomBtn" onclick="navigation(2)">Bottom</button>
+<button class="topBtn" onclick="navigation(3)">Top</button>
+</div>
+
+<body onload="startUp()" onbeforeunload="checkSave()">
+
+
+  <header>
+      <%if (!blog) {%>
+<div>
+    <input id="title" onclick="checkField(0)" placeholder="Enter Title" style="border-radius: 25px; ">
+    <%} else {%>
+    <input id="title" onclick="checkField(0)" placeholder="Enter Title" style="border-radius: 25px;" value="<%=blog.title%>"> </div>
+    <%}%>
+
+
+    <!-- if blog is not null edit() otherwise publish -->
+   
+    <%if (!blog) {%>
+    <button onclick="publish()" class="publishBtn">Save</button>
+    <span id="username" hidden><%= JSON.stringify(userName);%></span>
+    <%} else {%>
+    <button onclick="edit()" class="publishBtn">Save</button>
+    <%}%>
+  </header>
+  <!--here i changed the class from your textArea to use-keyboard-input
+  which is in the quickWriter.js file-->
+
+
+<!-- buttons above keyboard here -->
+
+ <a href="/michaelsfile"><button onclick="" class="fileBtn" style="transform:translateX(60px);">Files</button></a>
+ <!-- <button onclick="" class="blogsBtn" style="transform:translateX(70px);">Blogs</button> -->
+ <!-- <button onclick="" class="saveBtn" style="transform:translateX(-30px);">Save</button> -->
+<!-- end buttons here -->
+
+
+ <!--button id="shareButton" class="shareBtn" style="transform:translateX(-70px);">Share</button>
+
+<!-- This custom pop up has been disabled because the funcitonality was not able to be implemented.
+     To see Dawn's work, uncomment line 54 -->
+
+<!------- Custom pop up for share button ------------->
+<div id="myModal" class="modal">
+<div class="container">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <br>
+    <br>
+    <br>
+    <!-- facebook link -->
+    <!-- replace link with judis fb -->
+    <a class="custom-share-button" href="https://www.facebook.com/sharer/sharer.ph?u=https%3A%2F%2Fjonsuh.com%2F"
+    target="_blank" style="color:white; font-weight: normal" >
+  <span class="custom-share-button-label">Share on Facebook</span></a>
+<br>
+<br>
+<br>
+  <!--share to friend/family - email -->
+  <a class="custom-share-button" class="customEmailBtn" href="mailto:someone@example.com?Subject=Hello%20again"
+  target="_blank" style="background: #D66C02; color:white; font-weight: normal; ">
+    <span class="custom-share-button-label">Share to Friend</span></a>
+    <br>
+    <br>
+    <br>
+    <!-- share to blog - insert link to post blog -->
+    <a class="custom-share-button" href="" target="_blank"
+    style="background:#0793AF; color:white; font-weight:normal">
+      <span class="custom-share-button-label">Share to Blog</span></a>
+      <br>
+      <br>
+      <br>
+  </div>
+</div>
+</div>
+
+<!----------- end custom pop up --------------->
+  <%if (!blog) {%>
+  <textarea autofocus placeholder="Share Your Story..." class="use-keyboard-input" onclick="checkField(1)" onscroll="updateScroll()" id="userText"
+style="border-radius: 10px;"></textarea>
+  <%} else {%>
+  <textarea autofocus placeholder="Write With Your Heart..." class="use-keyboard-input" onclick="checkField(1)" onscroll="updateScroll()"
+  id="userText"><%=blog.body%></textarea>
+  <span id="blogId" hidden>
+  <%= JSON.stringify(blog._id);%>
+  </span>
+  <span id="userId" hidden>
+  <%= JSON.stringify(blog.author.username);%>
+  </span>
+  <%}%>
+
+
+
+<!--JS for customized share button -->
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("shareButton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+<!-- end customized share btn javascript -->
+
+
+
+</body>
+
+</html>

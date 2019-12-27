@@ -1,0 +1,205 @@
+<!-- Author: Dawn Dean - HTML & CSS -->
+<!-- Author: Jacob Vincent - Moved createNew() function (Originally written by Ali) to Files page so that
+a blog is created on the server as soon as "new blog" is pressed. Minimize probability of lost work. -->
+<html>
+  <head>
+    <!--- responsive webpage requires, viewport, content attribute -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Blog Site for Mike">
+    <meta name="keywords" content="web design, Judi's webpage, blog">
+    <meta name="author" content="Mike">
+    <link rel="stylesheet"  type = "text/css" href = "/css/judisFilesPage.css" />
+    <!-- jquery library added to fix "$ not defined" error -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    function publish(blogId){
+    var publishedBtn = document.getElementById(JSON.stringify(blogId));
+    
+    if(publishedBtn.checked) {
+      published = true;
+    } else {
+      published = false;
+    }
+    published = encodeURIComponent(published);
+    data = 'published=' + published;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('post', '/judi/' + blogId, true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send(data);
+   }
+   function createNew() {
+    //If title is empty, fill it with todays date
+    
+        var date;
+        var month = new Date().getMonth();
+        var day = new Date().getDate();
+        var year = new Date().getFullYear();
+        switch (month) {
+            case 0:
+                date = "January";
+                break;
+            case 1:
+                date = "February";
+                break;
+            case 2:
+                date = "March";
+                break;
+            case 3:
+                date = "April";
+                break;
+            case 4:
+                date = "May";
+                break;
+            case 5:
+                date = "June";
+                break;
+            case 6:
+                date = "July";
+                break;
+            case 7:
+                date = "August";
+                break;
+            case 8:
+                date = "September";
+                break;
+            case 9:
+                date = "October";
+                break;
+            case 10:
+                date = "November";
+                break;
+            case 11:
+                date = "December";
+                break;
+        }
+    
+    var title = date + " " + day + " " + year;
+    var body = "";
+    var time = Date.now();
+    var user = "judi";
+    title = encodeURIComponent(title);
+    body = encodeURIComponent(body);
+    data = 'title=' + title + '&body=' + body + "&time=" + time;
+    console.log(data);
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('POST', '/' + 'judi', true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send(data);  
+                    var delayInMilliseconds = 100; //0.1 second
+
+                setTimeout(function () {
+                    window.location.href = "/" + 'judi' + "/latest";
+                }, delayInMilliseconds);}
+   </script>
+
+    <title>Files | Judi</title>
+  </head>
+<body>
+<div class="logoContainer">
+  <div class="centered" style="width: 100%">
+
+    <!-------------------------- HEADER HERE ------------------------------>
+
+     <!-- begin navbar -->
+     <header>
+     <div class= "container">
+  <div id="homepage">
+    <h1 style="margin: 8px 0 0 25px">
+      <a href="/judi"><button class="button blogBtn" >My Blog |</button></a>
+      <a><button onclick = "createNew()" class="button blogBtn">NEW STORY</button></a>
+    </h1>
+    
+  </div>
+
+  </div>
+     </header>
+     <!----------------- end nav bar -------------------------------------->
+
+             <!----- File Font above files retrieved from server side --->
+           <center>
+             <h2 style="font-size: 90px;font-weight: normal">FILES</h2></br></br>
+           </center>
+             <!--- end file font ------->
+						 
+						 
+
+<!---------  End new button --------->
+
+<% blogsVar.forEach(function(blog){ %>
+<center>
+
+<!--------- File Card --------->
+
+  <div class="buttonContainer">
+  <br>
+  <div class ="fileBtn">
+
+        <!-- delete btn -->         
+        <form action="/judi/<%=blog._id%>?_method=DELETE" method="POST">
+        <input type="submit" class="deleteBtn" value="Delete"
+        onclick="return confirm('Are you sure you want to delete this file?');">
+        </form>
+        <!-- end delete btn -->
+
+        <!-- edit btn -->
+        <a href="/judi/<%=blog._id%>/edit">
+            <button class="updateBlogBtn"">Edit</button></a>
+
+        <!-- end edit btn -->
+
+         <!-- title label -->
+         <a href="/judi/<%=blog._id%>/">
+         <p class="fileTitle">
+           <%=blog.title%>
+         </p>
+        </a>
+        <span id="blogId" hidden><%= JSON.stringify(blog._id);%></span>
+
+        <!-- end title label -->
+
+        <!-- share button -->
+        
+        <div data-href="http://ugdev.cs/smu.ca:3000/judi/<%=blog._id%>/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ugdev.cs.smu.ca:3000/judi/<%=blog._id%>/"><button class="shareBtn"">Share</button></a></div>
+
+        <!-- end share button -->
+
+        <!-- publish toggle -->
+
+        <div class="toggleBtn">
+        <div class="onoffswitch">
+          <%if(blog.published == true){%>
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" 
+          id="<%= JSON.stringify(blog._id);%>" checked onclick="publish(<%= JSON.stringify(blog._id);%>)">
+          <label class="onoffswitch-label" for="<%= JSON.stringify(blog._id);%>"></label>
+          <%} else{%>
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" 
+          id="<%= JSON.stringify(blog._id);%>" unchecked onclick="publish(<%= JSON.stringify(blog._id);%>)">
+          <label class="onoffswitch-label" for="<%= JSON.stringify(blog._id);%>"></label>
+          <%};%>
+
+        <!-- end publish toggle -->
+        </div>
+      </div>
+  </div>
+
+</div>
+
+<!-- End File Card -->
+
+</center>
+<%});%>
+
+
+
+  </div>
+
+  </div>
+</div>
+<div class="footer">
+   <br>
+   <br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+/*-------------------HEADER NAVBAR ----------------------*/
+/*NAVBAR*/
+/*-----------HEADER NAVBAR----------------*/
+header {
+  background-color: black !important;
+  padding-top:30px;
+  padding-bottom:-90px;
+  min-height: 70px;
+  min-height: 20%;
+  overflow-x: hidden;
+
+  /* bleeds the header*/
+  margin: -90px -60px 20px -20px;
+  transform: translateY(-120px);
+}
+
+
+
+/*--------------------END HEADER NAVBAR -----------------*/
+
+/*-------------------KEYBOARD BACKGROUND ----------------*/
+
+.twoTone {
+    color: #297F73;
+    background-image: linear-gradient(to left bottom, #008793, #004d7a, #008793, #00bf72, #a8eb12);
+}
+/*------------------ END KEYBOARD BACKGROUND ----------------*/
+/*textArea style*/
+
+/*end textArea style*/
+/*start title*/
+.titleHeader {
+  text-align: center;
+  color: black;
+  font-family: Courier;
+  padding-top: -0px 0px 0px 0px;
+  font-size: 50px;
+  position: relative;
+  bottom: 50px;
+}
+
+.textBox  {
+  position: relative;
+  padding: 30px;
+  width: 30%;
+}
+::placeholder {
+  font-family: Courier;
+  font-size: 160%;
+
+}
+/* end title*/
+
+/*-------------POP UP BOX CSS -----------------------*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: center;
+
+}
+
+
+/* Modal Content (pop up box)*/
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 20px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*end close button */
+
+/*------------------- Facebok style---------------------------*/
+.custom-share-button {
+  font-family: 'Courier New';
+  font-size: 30px;
+  background-color: #1E51AA;
+  padding: .4em 1.2em;
+  border-radius: 3px;
+  display: inline-block;
+  border-radius: 25px;
+  margin: 0px 0 10px 0;
+  width: 40%;
+  box-shadow:  1px 2px 2px 1px grey;
+
+
+}
+
+.custom-share-button-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.custom-share-button-label {
+  font-size: .9em;
+  font-weight: 500;
+}
+
+.custom-share-button:hover {
+  background-color: #1432A8;
+  color: white;
+}
+/*------------------- END FB style---------------------------*/
+/*-------------------SCROLL BAR Customize------------------*/
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: green;
+  outline: 1px solid black;
+  border-radius: 30px;
+}
+
+/*************** SCROLLBAR BASE CSS ***************/

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- Author: Dawn Dean - HTML & CSS + Slider JS + Logo -->
+<!-- Additional functionality in post display: Evan Farrell -->
+<html>
+<head>
+  <title>Judi's | Homepage</title>
+</head>
+
+<!--- responsive webpage requires, viewport, content attribute -->
+<meta charset="utf-8">
+<!-- <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css"> -->
+
+<meta name="description" content="Blog Site for Judi">
+<meta name="keywords" content="web design, Judi's webpage, blog">
+<meta name="author" content="Judi">
+
+<link rel="stylesheet" href="/css/jquery.mobile-1.3.1.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/jquery-1.8.3.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/scripts/slider.js"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" href="/css/jhomePageStyle.css" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--INLINE JAVASCRIPT FOR SLIDER----->
+<script>
+  $('.post-wrapper').slick({ // the class here refers to the div class that contains the blog.
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    responsive: [{
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          nextArrow: $('.next'),
+          /*replaces the previous and next button with font awesome icons*/
+          prevArrow: $('.prev'),
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+</script>
+
+<!---END INLINE JAVASCRIPT-------->
+</head>
+
+
+<body>
+  <header>
+    <div class="container">
+      <div id="homepage">
+        <!--  <input type="file" id="JudysBlog"> -->
+        <!-- add id "btnBlogs when you know how to code the js" -->
+        <h1 style="margin: 10px 0 0 20px"><button class="button blogBtn" >blogs |</button></h1>
+      </div>
+    </div>
+  </header>
+
+  <!---  the image after the nav bar -->
+  <div id="blogHeader">
+    <center><img src="/Judis Media/judiLogoWithoutWelcomeBackText.png" alt="judi's logo" align="middle" width="50%" height="50%"></center>
+  </div>
+
+  <!-- end image after nav -->
+  <!-- <div class="search-box"> -->
+  <!--  <input class="search-txt" type="text" name="" placeholder="Search for Blogs..."> -->
+  <!--  <a class="search-btn" href="#"></a> -->
+  <!-- <i id="searchIcon" class="fa fa-search" style="font-size: 1.60em; transform: translate(135%, 30%); color: teal"></i> -->
+
+  </div>
+
+  <!---START DISPLAYING BLOGS HERE ---------------------------------->
+  <div class="content pure-u-1 pure-u-md-3-4">
+    <div class="posts" id="posts">
+
+    </div>
+  </div>
+  <!---END DISPLAY BLOGS HERE----------------------------->
+
+  <!---Start Page Wrapper--------------->
+  <div class="page-wrapper">
+    <!---Post Slider-------------->
+    <div class="post-slider">
+      <h1 class="slider-title" style=""> Recent Posts</h1>
+      <!---insert the previous and forward icons from font awesome--->
+      <i class="fa fa-chevron-left prev"></i>
+      <i class="fa fa-chevron-right next"></i>
+        <!---The Slider--------------->
+      <!--This is where you will call the blogs to be displayed -->
+        <div class="post-wrapper">
+          <!--this is the class called in the inline js above---->
+
+
+          <!---insert blog div here--->
+          <% blogsVar.forEach(function(blog){ %>
+            <div class="posts" id="posts">
+              <section class="post">
+                <header class="post-header">
+                  <h2 class="post-title">
+                    <%=blog.title%>
+                  </h2>
+                </header>
+                <div class="post-description">
+                  <p><%=blog.body%></p>
+                 </div>
+                 <div>
+                  <a href="/judi/<%=blog._id%>"><button class="readMe">Read Me</button></a>
+                 </div>
+              </section>
+            </div>
+            <%});%>
+
+        </div>
+    </div>
+    <!---End Slider--------------->
+  </div>
+  <!---End Wrapper--------------->
+</body>
+</html>

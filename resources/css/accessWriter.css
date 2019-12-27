@@ -1,0 +1,42 @@
+/*STYLING FOR KEYBOARD*/
+
+
+/*-------------------KEYBOARD BACKGROUND ----------------*/
+.keyboardRow1 , .keyboardRow2, .keyboardRow3, .keyboardRow4{
+  background-color: black;
+
+}
+
+
+.twoTone {
+        color: #fff;
+        background: -webkit-linear-gradient(90deg, #000 50%, rgba(0, 0, 0, 0) 8%);
+}
+
+.titleHeader {
+  text-align: center;
+  color: black;
+  font-family: Courier;
+  padding-top: -0px 0px 0px 0px;
+  font-size: 50px;
+  position: relative;
+  bottom: 50px;
+}
+
+.textBox  {
+  position: relative;
+
+  padding: inherit;
+
+}
+.keyboard {
+  transform: translateY(-50%);
+  align-content: center;
+  zoom: 1.0045;
+  width:100%;
+}
+::placeholder {
+  font-family: Courier;
+  font-size: 160%;
+
+}

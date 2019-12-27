@@ -1,0 +1,64 @@
+/*Judis Full Blog page*/
+
+/*-----------NAVBAR----------------*/
+header {
+  background: black;
+  padding:32px;
+  margin: -8px -8px 0px -8px;
+}
+header ul {
+  /*Unordered lists have padding by default*/
+  margin:0;
+  padding: 0;
+}
+header nav {
+  float:right;
+  margin-top:10px;
+}
+/*------------END   NAVBAR -------------------*/
+
+
+
+
+/*-----------------------ACTUAL BLOG POST STYLING---------------------------*/
+.post-header {
+  background: white;
+  color: black;
+  font-family: 'Courier New';
+  text-align: center; /*center blog titles*/
+  min-height: 70px;
+  margin: 0px 0px 0px 0px;
+}
+
+.post-description {
+
+  text-align: center;
+  color: black;
+  font-family: 'Calibri';
+}
+
+.posts .post-title {
+  color: black;
+  font-family: 'Courier New';
+  text-align: center;
+}
+/*-----------------END BLOG POST STYLING DISPLAY-----------------------------*/
+
+
+/* ---------END SLIDER FOR BLOGS--------------------------------------*/
+/*-------------------SCROLL BAR Customize------------------*/
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: red;
+  outline: 1px solid black;
+  border-radius: 30px;
+}
+
+/*************** SCROLLBAR BASE CSS ***************/

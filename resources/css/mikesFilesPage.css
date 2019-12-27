@@ -1,0 +1,407 @@
+/*File page*/
+/* 
+
+Primary Authors: Dawn Dean, Michael Walton
+
+Updates:
+lovingly tweeked by Nikolaus 
+
+*/
+
+body {
+  font-family: 'Courier New';
+  overflow-x: hidden;
+  width: 100%;
+  margin: 20px auto 0 auto;
+}
+
+/*Customized Scrollbar*/
+/* Chrome, Safari */
+::-webkit-scrollbar {
+width: 15px;
+height: 15px;
+
+}
+::-webkit-scrollbar-track-piece  {
+background-color: #C2D2E4;
+border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 30px;
+background-color: #B21212;
+border-radius: 30px;
+}
+
+/*End Customized Scrollbar*/
+
+/*NAVBAR*/
+/*-----------NAVBAR----------------*/
+header {
+  background: black;
+  color: white;
+  padding-top:10px;
+  padding-bottom:-70px;
+  min-height: 70px;
+
+  /* bleeds the header*/
+  margin: -20px -20px 20px -20px;
+}
+
+* {
+  /*Unordered lists have padding by default*/
+  margin:0;
+  padding: 0;
+}
+
+header #homepage {
+  /*floating the "blogs" to the left*/
+  float:left;
+  padding-right: 4px;
+  font-family: 'Courier New';
+  font-weight: 100;
+  margin: auto;
+}
+
+header nav {
+  float:right;
+  margin-top:10px;
+
+}
+/*------------END   NAVBAR -------------------*/
+
+/*New Btn position*/
+.newBtnPosition {
+  top:12%;
+  right:2%;
+  float:right;
+  transform:translateY(-210%);
+  text-align: left;
+
+}
+
+/*End New Btn position*/
+
+/*-------------------------New btn style-------------------------- */
+.newBtn {
+    background-color: #B21212;
+    color: white;
+    font-size: 20px;
+    /*padding increases button width and height */
+    padding: 10px;
+    margin: 0 20px 0 0;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    /*change btn size*/
+    width: 150px;
+    resize: both;
+    box-shadow: 2px 2px #888888;
+    font-family: 'Courier New';
+  }
+  .shareBtn {
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    font-family: 'Courier';
+    width: 120px;
+    height: 50px;
+    font-size: 30px;
+    float: right;
+}
+  .shareBtn:hover {
+    background-color: gold;
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+    
+
+/*@media screen and (min-width: 629px) and (max-height: 756px)  {
+  .newBtn {
+    background-color: teal;
+    color: white;
+    font-size: 20px;
+    /*padding increases button width and height 
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    /*change btn size
+    width: 90px;
+    resize: both;
+    box-shadow: 2px 2px #888888;
+
+    font-family: 'Courier New';
+  }
+}*/
+
+.newBtn:hover {
+    background-color: orange;
+    /*font color on hover*/
+    color: black;
+    cursor: pointer;
+}
+    /* add the option to make button bigger on hover */
+
+/*-----------------End New btn style------------------*/
+
+/*--------------UPDATE BLOG BTN ----------*/
+.updateBlogBtn {
+border-radius: 30px;
+background-color: black;
+color: white;
+font-family: 'Courier';
+width: 120px;
+height: 50px;
+font-size: 30px;
+float: right;
+}
+
+.updateBlogBtn:hover {
+    background-color: #2295d4;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+}
+
+/*--------END UPDATE BLOG BTN----------*/
+
+
+/*--------------------BLOG TEXT BUTTON --------------*/
+.button {
+  font-family: Courier;
+  border: none;
+  background-color: inherit;
+  padding: 5px 30px 5px 20px;
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color:white;
+}
+
+.button:hover {
+  background: #AC0C0C;
+  color: white;
+  border-radius: 5px;
+}
+
+.blogBtn {
+  color: white;
+}
+
+/*-----------------END BLOG TEXT----------------------------*/
+/*Delete Button*/
+.deleteBtn {
+margin:10px 5px 10px 10px;
+border-radius: 5px;
+float: left;
+cursor: pointer;
+background: #B21212;
+font-family: 'Courier New';
+font-size:20px;
+color: white;
+padding: 5px;
+
+
+}
+
+.deleteBtn:hover {
+ background: #f20a19;
+ color: black;
+ font-weight: bold;
+ cursor: pointer;
+}
+/*End Delete Button*/
+
+
+
+/*File Title */
+.fileTitle {
+float:left;
+padding-top: 10px;
+padding-left: 15px;
+font-size: 25px;
+color: black;
+font-style:italic;
+font-family: 'Arial';
+width: 200px;
+}
+/*End File Tile*/
+
+
+
+/*file button style*/
+.fileBtn {
+  width: 700px;
+  height: 150px;
+  border-radius: 30px;
+  font-family: 'Courier New';
+  font-size: 30px;
+  box-shadow:  1px 2px 2px 2px grey;
+  position: relative;
+  opacity: 10;
+  background-color:rgba(192,192,192,0.3);
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  
+
+}
+/*end file btn style*/
+
+/*div container max width*/
+.buttonContainer {
+  max-width: 100%;
+  text-decoration: none;
+}
+/*end div container max width*/
+
+/*container for toggle btn*/
+
+.toggleBtn {
+  width: 100%;
+}
+
+@media screen and (min-width:500px) and (max-height: 600px)  {
+.toggleBtn {
+  width: 30%;
+}
+}
+
+
+/*end toggle btn*/
+/*-----------------TOGGLE SWITCH-----------------------------*/
+
+.onoffswitch {
+    position: relative;
+    width: 90px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select: none;
+    float: right;
+    /*transform:translate(-10%,-130%);*/
+    text-decoration: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 30px;
+    padding: 0;
+    line-height: 30px;
+    border: 0px solid #999999;
+    border-radius: 25px;
+    background-color: #FF0000;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block;
+    width: 25px;
+    margin: 2.5px;
+    background: #990a00;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 56px;
+    border-radius: 25px;
+    box-shadow: 0 6px 12px 0px #757575;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #44F02D;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #b30000;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px;
+    background-color: green;
+    box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+}
+/*-----------------------END TOGGLE SWITCH---------------------------*/
+
+
+/*-------------POP UP BOX FOR SHARE CSS -----------------------*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: center;
+
+}
+
+
+/* Modal Content (pop up box)*/
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 10px;
+  border-color: #7F2B29;
+  border-width: 2px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*end close button */
+
+/*------------------- Facebok style---------------------------*/
+.custom-share-button {
+  font-family: 'Courier New';
+  font-size: 30px;
+  background-color: #1E51AA;
+  padding: .4em 1.2em;
+  border-radius: 3px;
+  display: inline-block;
+  border-radius: 25px;
+  margin: 0px 0 10px 0;
+  width: 40%;
+  box-shadow:  1px 2px 2px 1px grey;
+
+
+}
+
+.custom-share-button-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.custom-share-button-label {
+  font-size: .9em;
+  font-weight: 500;
+}
+
+.custom-share-button:hover {
+  background-color: #1432A8;
+  color: white;
+}
+/*---------------------END POP UP FOR SHARE -------------------*/

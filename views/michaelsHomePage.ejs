@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Author: Michael Walton - HTML & CSS -->
+<!-- Author: Dawn Dean - Logo + Slider Javascript -->
+<!-- Additional functionality in post display: Evan Farrell -->
+<html>
+<head>
+  <!-- ************ ADD NAME WITH JS/EJS ************** -->
+  <title id="title">Michael's | Homepage</title>
+
+  <!-- responsive webpage requires, viewport, content attribute -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="/scripts/jquery-1.8.3.min.js"></script>
+  <script language="JavaScript" type="text/javascript" src="/scripts/slider.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- ******* LINK CSS WITH JS OR EJS ******************* -->
+  <!-- paths in server don't look like they'd work but they do? -->
+  <link rel="stylesheet" type="text/css" href="/css/mHomePageStyle.css">
+
+  <!--Font Awesome(for icons)--->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+    <!-- RETURN TO HOMEPAGE (THIS PAGE)-->
+    <div id="homepage">
+      <h1 style="margin: 8px 0 0 25px">
+      <a href="/michael"><button class="button blogBtn" >Michael's Blog</button></a> | 
+    </div>
+     </header>
+
+  <!--  LOGO AND BACKGROUND IMAGE -->
+  <div id="blogHeader">
+    <img id="logo">
+  </div>
+
+  <!---Page Wrapper--------------->
+  <div class="page-wrapper">
+    <!---Post Slider-------------->
+    <div class="post-slider">
+      <h1 class="slider-title" style="font-size: 35px; ">Recent Posts</h1>
+      <!---insert the previous and forward icons from font awesome--->
+      <i class="fa fa-chevron-left prev"></i>
+      <i class="fa fa-chevron-right next"></i>
+           <!---The Slider--------------->
+      <!--This is where you will call the blogs to be displayed -->
+      <div class="post-wrapper">
+        <!--this is the class called in the inline js above -->
+
+        <!---insert blog div here--->
+        <% blogsVar.forEach(function(blog){ %>
+        <div class="posts" id="posts">
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title"><%=blog.title%></h2>
+            </header>
+            <div class="post-description">
+                <p><%=blog.body%></p>
+             </div>
+             <div>
+              <a href="/michael/<%=blog._id%>"><button class="readMe">Read Me</button></a>
+            </div>
+          </section>
+        </div>
+        <%});%>
+
+      </div>
+    </div>
+    <!---End Slider--------------->
+  </div>
+  <!---End Wrapper--------------->
+</body>
+</html>

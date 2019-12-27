@@ -1,0 +1,115 @@
+<!-- Mike's Login Page -->
+<!-- Author: Michael Walton - HTML & CSS -->
+<html>
+<head>
+  <!--- responsive webpage requires, viewport, content attribute -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Blog Site for Mike">
+  <meta name="keywords" content="web design, blog">
+  <meta name="author" content="Mike">
+
+  <link rel="stylesheet" href="/css/mikesLogInButtonStyle.css" />
+  <!-- jquery library added to fix "$ not defined" error -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+  <title>Login | Michael</title>
+</head>
+
+<body>
+  <div class="logoContainer">
+    <div class="centered" style="width: 100%">
+
+      <!-------------------------- HEADER HERE ------------------------------>
+      <!-- lets put the navbar in the header tag -->
+      <!-- create a div container to keep elements in the middle to prevent them from
+     shifting to the edge of the webpage -->
+      <!-- begin navbar -->
+      <header>
+        <div class="container">
+          <div id="homepage">
+          </div>
+          <!--nav-->
+        </div>
+      </header>
+      <!-- end nav bar -->
+
+      <div>
+        <div class="containerBirds">
+          <div class="bird-container bird-container--one">
+            <div class="bird bird--one"></div>
+          </div>
+          <div class="bird-container bird-container--two">
+            <div class="bird bird--two"></div>
+          </div>
+          <div class="bird-container bird-container--three">
+            <div class="bird bird--three"></div>
+          </div>
+          <div class="bird-container bird-container--four">
+            <div class="bird bird--four"></div>
+          </div>
+        </div>
+
+        <!-----------------  END BIRDSSS --------------------------------->
+
+        <!--START Mikes LOGO HERE -->
+
+        <!-- now we want to place the large mike logo in a section tag seperate from the header -->
+        <section id="MikesLandingPageLogo">
+
+          <!-- place the logo in a div container -- center logo-->
+          <div class="container">
+            <center>
+              <div>
+                <h1>
+          <img src="/Mikes Media/mikesLogoWithoutWelcomeBackText.png" alt="mike"  style="width: 55%; margin-bottom: 30px;">
+        </h1>
+              </div>
+            </center>
+
+          </div>
+        </section>
+      </div>
+      <!--END Mikes LOGO HERE-->
+
+
+      <!--LOGIN BUTTON HERE -->
+      <!-- when user clicks the Login button, the button will turn into a password field -->
+      <div>
+        <!-- script for show password field -->
+        <script>
+          function myFunction() {
+            var x = document.getElementById("passInput");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          }
+        </script>
+        <center>
+          <div class="passwordField">
+            <form action="/login/michael" method="post">
+              <input type="text" name="username" value="michael" hidden>
+              <input type="password" id="passInput" name="password" placeholder="Enter Password Here" required style="width: 22%; height:7%; background-color: #CCCCCC;
+              font-size: 20px;font-family:'Courier New'; border-radius: 20px;">
+              <br>
+              <p>
+                <input type="checkbox" onclick="myFunction()" style="color: black;">Show Password
+                <br>
+                <br>
+                <input type="submit" class="logInBtn" value="Log in">
+                <div style="color: red;"><strong><%= message %></strong></div>
+            </form>
+          </div>
+        </center>
+      </div>
+
+      <!--LOGIN ENTER BUTTON-->
+    </div>
+  </div>
+
+</body>
+
+</html>

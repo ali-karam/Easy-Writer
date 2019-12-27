@@ -1,0 +1,108 @@
+<!-- blog page when user clicks 'Read Me' on slider -->
+<!-- Judi's Login Page -->
+<!-- Author: Dawn Dean - HTML & CSS + Logo -->
+<!-- Additional contributions by Nikolaus Kollo and Ali Karam -->
+<html>
+  <head>
+<meta name="description" content="Blog Site for Judi">
+<meta name="keywords" content="web design, Judi's webpage, blog">
+<meta name="author" content="Judi">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="scripts/jquery-1.8.3.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/jhomePageStyle.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Judi's Blog | <%=blog.title%></title>
+
+<style>
+
+.paragraph-container {
+ width: 70%;
+ height: 50%;
+ box-sizing: border-box;
+ background:#f7f2e6;
+ border-radius: 30px;
+ margin-bottom: 10px;
+ padding: 10px;
+ box-shadow: 2px 5px 10px #888888;
+}
+
+/*Customized Scrollbar*/
+/* Chrome, Safari */
+::-webkit-scrollbar {
+width: 15px;
+height: 15px;
+
+}
+::-webkit-scrollbar-track-piece  {
+background-color: #C2D2E4;
+border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:vertical {
+height: 30px;
+background-color: teal;
+border-radius: 30px;
+}
+
+/*End Customized Scrollbar*/
+     </style>
+  </head>
+
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
+<header>
+    <div class="container">
+      <div id="homepage">
+        <h1 style="margin: 8px 0 0 25px">
+      <a href="/judi"><button class="button blogBtn" >Judi's Blog</button></a>
+      </div>
+    </div>
+  </header>
+
+  <!---  the image after the nav bar -->
+  <div id="blogHeader">
+    <center><img src="/Judis Media/judiLogoWithoutWelcomeBackText.png" alt="judi's logo" align="middle" width="65%" height="50%"></center>
+  </div>
+
+  <!-- end image after nav -->
+
+<!-- insert blog in a box  -->
+<!-- insert title, below title insert paragraph -->
+<!--This is where you will call the blogs to be displayed -->
+  <div class="post-wrapper">
+    <!--this is the class called in the inline js above---->
+
+    <!---insert blog div here--->
+    <div class="posts" id="posts">
+      <section class="post">
+         <center><h2 class="post-title" style="font-size: 50px;"><%=blog.title%>
+<!-- share button -->
+
+<div class="fb-share-button" data-href="http://ugdev.cs.smu.ca:3000/judi/<%=blog._id%>" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://ugdev.cs.smu.ca:3000/judi/<%=blog._id%>" class="fb-xfbml-parse-ignore">Share</a></div>
+
+                            <!-- end share button -->
+
+</h2>
+
+</center>
+        <div class="post-description">
+          <center>
+            <div class="paragraph-container">
+              <p class ="blogBody"><%=blog.body%></p>
+        </div>
+
+      </center>
+        </div>
+
+</div>
+   
+</body>
+</html>
+

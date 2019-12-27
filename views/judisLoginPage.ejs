@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- Judi's Login Page -->
+<!-- Author: Dawn Dean - HTML & CSS + Logo + Birds -->
+<html>
+<head>
+  <!--- responsive webpage requires, viewport, content attribute -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Blog Site for Judi">
+  <meta name="keywords" content="web design, jud's webpage, blog">
+  <meta name="author" content="Judi">
+
+  <link rel="stylesheet" href="/css/judisLogInButtonStyle.css" />
+  <!-- jquery library added to fix "$ not defined" error -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  <title>Login | Judi</title>
+</head>
+
+<body>
+  <div class="logoContainer">
+    <div class="centered" style="width: 100%">
+
+      <!-------------------------- HEADER HERE ------------------------------>
+      <!-- lets put the navbar in the header tag -->
+      <!-- create a div container to keep elements in the middle to prevent them from
+     shifting to the edge of the webpage -->
+      <!-- begin navbar -->
+      <header>
+        <div class="container">
+          <div id="homepage">
+          </div>
+          <!--nav-->
+        </div>
+      </header>
+      <!-- end nav bar -->
+
+      <div>
+        <div class="containerBirds">
+          <div class="bird-container bird-container--one">
+            <div class="bird bird--one"></div>
+          </div>
+          <div class="bird-container bird-container--two">
+            <div class="bird bird--two"></div>
+          </div>
+          <div class="bird-container bird-container--three">
+            <div class="bird bird--three"></div>
+          </div>
+          <div class="bird-container bird-container--four">
+            <div class="bird bird--four"></div>
+          </div>
+        </div>
+
+        <!-----------------  END BIRDSSS --------------------------------->
+
+        <!--START Judis LOGO HERE -->
+
+        <!-- now we want to place the large judi logo in a section tag seperate from the header -->
+        <section id="JudisLandingPageLogo">
+
+          <!-- place the logo in a div container -- center logo-->
+          <div class="container">
+            <center>
+              <div>
+                <h1>
+          <img src="/Judis Media/judiLogoWithoutWelcomeBackText.png" alt="judi" class="judiLogo" style ="width: 60%;">
+        </h1>
+              </div>
+            </center>
+
+          </div>
+        </section>
+      </div>
+      <!--END Judis LOGO HERE-->
+
+
+      <!--LOGIN BUTTON HERE -->
+       <center>
+        <script>
+          function myFunction() {
+            var x = document.getElementById("passInput");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          }
+        </script>
+        <div class="passwordField">
+          <form action="/login/judi" method="post">
+            <input type="text" name="username" value="judi" hidden>
+            <input type="password" id="passInput" name="password" placeholder="Enter Password Here" required required style="width: 22%; height:7%; background-color: #CCCCCC;
+            font-family:'Courier New'; border-radius: 20px; font-size:30px;">
+            <br>
+            <p>
+              <input type="checkbox" onclick="myFunction()" style="color: black;">Show Password
+              <br>
+              <br>
+              <input type="submit" class="logInBtn" value="Log in">
+              <div style="color: red;"><strong><%= message %></strong></div>
+          </form>
+        </div>
+      </center>
+
+      <!--LOGIN ENTER BUTTON-->
+    </div>
+  </div>
+
+</body>
+
+</html>

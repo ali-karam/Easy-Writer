@@ -1,0 +1,291 @@
+/*Home Page Style Sheet*/
+
+body {
+}
+/*-----------NAVBAR----------------*/
+header {
+  background: black;
+  color: white;
+  padding-top:30px;
+  padding-bottom:-90px;
+  min-height: 70px;
+
+  /* bleeds the header*/
+  margin: -20px -20px 20px -20px;
+}
+
+header ul {
+  /*Unordered lists have padding by default*/
+  margin:0;
+  padding: 0;
+}
+
+header #homepage {
+  /*floating the "blogs" to the left*/
+  float:left;
+  padding-right: 4px;
+  font-family: 'Courier New';
+  font-weight: 100;
+}
+
+header #homepage {
+  margin: auto;
+}
+
+header nav {
+  float:right;
+  margin-top:10px;
+
+}
+/*------------END   NAVBAR -------------------*/
+
+
+/*------------------------IMAGE UNDER THE HEADER--------------------*/
+#blogHeader {
+  min-height: 400px;
+  background: url('../Mikes Media/blogHeader.jpg') no-repeat;
+  background-size: cover;
+  margin: -20px -20px 30px -20px;
+  box-shadow: 10px 10px 5px #ccc;
+}
+/* ----------END IMAGE UNDER HEADER--------------------------------------*/
+
+/* ----------SLIDER FOR BLOGS--------------------------------------*/
+.post-slider {
+
+  position: relative; /*this is to help position the next and prev icons*/
+}
+
+/*Edit tile in post slider*/
+.post-slider .slider-title {
+  text-align: center;
+  margin: 30px auto;
+  font-family: Courier;
+  color: black;
+}
+/*Edit icons, they are also in the post-slider*/
+.post-slider .next {
+  /*we want the icon to be about 50% south of the slider itself*/
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  font-size: 2em;
+  color: #AC0C0C;
+  cursor: pointer;
+
+}
+.post-slider .prev {
+  /*we want the icon to be about 50% south of the slider itself*/
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  font-size: 2em;
+  color: #AC0C0C;
+  cursor: pointer; /*when user hovers over the button, the pointer will change to
+  indicate that the button is clickable*/
+}
+
+.post-slider .post-wrapper {
+  padding: 10px 0px 10px 0px;
+  width: 84%;
+  height: 350px;
+  margin: 0px auto; /*the auto makes sure it is centered horizontally*/
+
+  overflow: hidden; /*if there is overflow outside of the parent
+   container post slider, hide it.*/
+}
+/*style each post/blog that is inside the post wrapper*/
+.post-slider .post-wrapper .posts {
+  /*lets give the blogs a background color*/
+  background-color: #f2f0eb;
+  /* We want to display them horizontally, so lets do that*/
+  display: inline-block;
+  /*lets increase the width and height*/
+  width:300px;
+  height: 330px;
+  margin: 0px 10px; /* seperated the blogs to there is some space between them*/
+  border-radius: 5px; /*round edges*/
+  box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+/* you need to add sme padding to the blog paragraph */
+.post-slider .post-wrapper .posts .post-description {
+  height: 130px;
+  padding: 0px 5px;
+}
+/*turn text red when users hover over paragraph text to indicate it can be click*/
+.page-wrapper p:hover {
+  color:#AC0C0C;
+  cursor: pointer;
+}
+
+/* ---------END SLIDER FOR BLOGS--------------------------------------*/
+/*-----------------------ACTUAL BLOG POST STYLING---------------------------*/
+.post-header {
+  background: white;
+  color: black;
+  font-family: 'Courier New';
+  text-align: center; /*center blog titles*/
+  padding-top: 30px;
+  padding-bottom: 0px;
+  min-height: 70px;
+  margin: 20px -20px 40px -10px;
+}
+
+.post-description {
+  padding-left: 50px;
+  text-align: center;
+  color: black;
+  font-family: 'Calibri';
+}
+
+.posts .post-title {
+  color: black;
+  font-family: 'Courier New';
+  text-align: center;
+}
+
+/*-----------------END BLOG POST STYLING DISPLAY-----------------------------*/
+
+
+  /*----------------------Enter Button Styled-----------------------------*/
+  .enterBtn {
+    position: relative;
+
+  }
+  .enterBtn .btn {
+      left: 50%;
+      /*pushes button up */
+      transform: translate(120%, 50%);
+
+      background-color: #AC0C0C ;
+      color: white;
+      font-size: 25px;
+      /*padding increases button width and height */
+      padding: 26px 70px;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      /*change btn size*/
+      width: 30%;
+      resize: both;
+      box-shadow: 0 9px #999;
+
+}
+.enterBtn:active {
+      box-shadow: 0 8px #666;
+      transform: translateY(8px);
+}
+
+
+  .enterBtn .btn:hover {
+      background-color: orange;
+      /*font color on hover*/
+      color: black;
+
+      /* add the option to make button bigger on hover */
+  }
+  /* -------------------------END ENTER BUTTON-------------------------- */
+
+  /* -------------------------FONT-STYLE ENTER BUTTON-------------------------- */
+  .btn {
+      font-family: 'Courier New';
+      font-size: 100%;
+      /*response button*/
+      width: 100%;
+      min-width: 50px;
+}
+/*--------------------END FONT STYLE ENTER BUtTON --------------*/
+
+/*--------------------BLOG TEXT BUTTON --------------*/
+.button {
+  font-family: Courier;
+  border: none;
+  background-color: inherit;
+  padding: 5px 30px 5px 20px;
+  font-size: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color:white;
+}
+
+.button:hover {
+  background: gold;
+  color: black;
+  border-radius: 5px;
+}
+
+.blogBtn {
+  font-color: white;
+}
+
+/*-----------------END BLOG TEXT----------------------------*/
+
+/*-----------------SEARCH BUTTON----------------------------*/
+.search-box {
+  position: absolute;
+  top:50%;
+  right: 50%;
+  transform: translate(900px, -450px);
+  background: black;
+  height: 40px;
+  border-radius: 47px;
+  padding: 10px;
+}
+.search-box:hover > .search-txt {
+  width: 240px;
+  padding: 7px 0px;
+  color: white;
+
+}
+.search-box:hover > .search-btn {
+  background: #AC0C0C;
+}
+.search-box:hover  {
+  background-color: #AC0C0C;
+}
+.search-btn {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 35%;
+  background: black;
+  display: run-in;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+
+.search-txt {
+  border:none;
+  background: none;
+  outline: none;
+  float: left;
+  transform: translate(5px, -5px);
+  color: white;
+  font-size: 25px;
+  transition: 0.4s;
+  line-height: 40px;
+  width:0px;
+  font-family: "Courier New";
+}
+
+
+::placeholder {
+  color: white;
+  opacity: 1;
+  font-family: "Courier New";
+}
+/*-----------------END SEARCH BUTTON----------------------------*/
+
+
+
+/*-----------------LAUNCHER STYLE-------------------------------*/
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+/*-----------------END LAUNCHER STYLE---------------------------*/

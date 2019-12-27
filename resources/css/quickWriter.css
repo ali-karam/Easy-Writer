@@ -1,0 +1,429 @@
+/* 
+
+Primary Author: Dawn Dean
+
+Updates: 
+Lyntus Serieux: Fixed button sizes & placement from prototype1
+
+Nov 10 2019:  Seamus MacInnes:  Update size and positioning of keys for responsiveness
+Dec 2 2019:   Seamus MacInnes:  Position and style of navigation buttons
+
+Jacob Vincent: edits to .keyboard__key--more-wide, 
+              .keyboard__key--predict-wide, navigation buttons
+
+ */
+
+header{
+  text-align:center; 
+}
+body{
+  margin:0px;
+font-family: 'Courier New';
+}
+textarea{
+overflow-x: hidden;
+}
+
+/* Navigation buttons*/
+
+.upBtn, .downBtn, .topBtn, .bottomBtn{
+ position: fixed;
+ right: 5px; 
+ height:45px;
+ width:110px;
+ border-radius:15px;
+ font-family: 'Courier New';
+ font-size: 25px;
+ background: gold;
+ color:black;
+ font-weight: bold;
+ z-index:800;
+}
+.downBtn {
+ bottom:5px;
+}
+.upBtn {
+ bottom:55px;
+}
+.bottomBtn {
+ bottom:105px;
+}
+.topBtn {
+ bottom:155px; 
+}
+.upBtn:hover, .downBtn:hover, .topBtn:hover, .bottomBtn:hover{
+transform: scale(1.2);
+background: black;
+color: white;
+cursor: pointer;
+}
+
+
+#logo{
+  content:url("../Writer Media/quickWriter.png");
+  display:block;
+  width:10%;
+  max-width:400px;
+  float:left;
+}
+#title{
+  height:2.5rem;
+  font-size: 2.5rem;
+  margin:10px 5px 0px 5px;
+  background-color: hsl(0,0%,90%);
+  font-family: 'Courier New';
+ 
+}
+
+
+#author{
+  height:2.5rem; 
+  width:8em;
+  font-size: 2.5rem;
+  margin:10px 5px 0px 5px;
+}
+.keyboard {
+  overflow-x: hidden;
+  position: absolute;
+  text-align:center;
+  bottom:0;
+  width: 100%;
+  padding: 5px 0 0 0;
+  background: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+.keyboard__keys{
+  position:relative;
+  margin-bottom:1.5rem;
+}
+.keyboard__key {
+  position: relative;
+  display: inline-block;
+  
+  min-width:2.5rem;
+  width: 6vw;
+  max-width: 10vh;
+  
+  min-height:2.5rem;
+  height:6vh;
+  max-height:7.5rem;
+  
+  /*change btn sizes*/
+  margin: 2px;
+  border-radius: 4px;
+  border: none;
+  background: #7F2B29;
+  color: #ffffff;
+  /*change text size on buttons*/
+  font-size: 2.5rem;
+  outline: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; 
+  font-family: 'Courier New';
+}
+.keyboard__key--wide {
+  min-width:calc(5rem + 4px);
+  width: calc(12vw + 4px);
+  max-width: calc(20vh + 4px);
+}
+.keyboard__key--extra-wide {
+  min-width:calc(15rem + 20px);
+  width: calc(36vw + 20px);
+  max-width: calc(60vh + 20px);
+}
+.keyboard__key--more-wide {
+  min-width:calc(10rem + 10px);
+  width: calc(24vw + 10px);
+  max-width: calc(40vh + 10px);
+}
+.keyboard__key--predict-wide {
+  min-width:calc(9rem + 12px);
+  width: calc(21vw + 12px);
+  max-width: calc(36vh + 12px);
+
+
+/* Linear Metal Styling  */
+
+  
+  color: hsla(0,0%,0%,1);
+  text-shadow: hsla(0,0%,40%,.5) 0 -1px 0, hsla(0,0%,100%,.6) 0 0px 1px;
+  
+  background-color: hsl(0,0%,90%);
+  box-shadow: inset hsla(0,0%,0%, 0) 0  0px 0px 0px, /* border */
+  inset hsla(0,0%,15%, .8) 0 -1px 5px 4px, /* soft SD */
+  inset hsla(0,0%,200%,.7) 0  2px 1px 7px, /* top HL */
+  hsla(0,0%, 0%,0) 0 -5px 6px 4px, /* outer SD */
+  hsla(0,0%,100%,.5) 0  5px 6px 4px; /* outer HL */ 
+  
+
+
+}
+
+.keyboard__key:active {
+  background: yellow;
+  color: black;
+}
+.keyboard__key:hover {
+  transform: scale(1.4);
+  background: gold;
+  color:black;
+  z-index: 1;
+  position: relative;
+  font-size: 3rem;
+  overflow-y: hidden;
+}
+.keyboard__key--activatable::after {
+  content: '';
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+.keyboard__key--active::after {
+  background: #08ff00;
+}
+.keyboard__key--dark {
+  background: rgba(0, 0, 0, 0.25);
+}
+.material-icon {
+  width: 50%;
+}
+.use-keyboard-input {
+  resize:none;
+  position: relative;
+  width: calc(100% - 28px);
+  height: calc(90vh - 45px - 16.5rem);
+  min-height:3rem;
+  margin:10px;
+  padding:2px;
+  border: solid 2px black;
+  outline:none;
+  font-size: 2.5rem;
+  border: 2px solid red;
+  border-radius: 7px;
+  outline: none;
+  border-color: #7F2B29;
+  box-shadow: 0 0 10px #7F2B29;
+  margin-top:15px;
+  font-family: 'Courier New';
+  
+}
+
+::placeholder {
+  font-size: 2.5rem;
+  font-family: 'Courier New';
+  font-weight: normal;
+  transform:translateX(10px);
+}
+
+/*Buttons*/
+.fileBtn {
+width:120px;
+height:55px;
+border-radius:15px;
+font-family: 'Courier New';
+font-size: 30px;
+background: #7F2B29;
+color:white;
+/*glossy look on buttons*/
+
+
+
+
+/*end glossy look*/
+
+}
+
+.blogsBtn {
+width:120px;
+height:55px;
+border-radius:15px;
+font-family: 'Courier New';
+font-size: 30px;
+background: #7F2B29;
+color:white;
+
+}
+.shareBtn {
+width:120px;
+height:55px;
+float:right;
+border-radius:15px;
+font-family: 'Courier New';
+font-size: 30px;
+background: #7F2B29;
+color:white;
+
+}
+
+.saveBtn {
+width:120px;
+height:55px;
+float:right;
+border-radius:15px;
+font-family: 'Courier New';
+font-size: 30px;
+background: #7F2B29;
+color:white;
+
+}
+.publishBtn {
+width:190px;
+height:55px;
+
+border-radius:15px;
+font-family: 'Courier New';
+font-size: 30px;
+background: #7F2B29 ;
+color:white;
+}
+
+
+.publishBtnPosition {
+transform: translate(-15px, 55px);
+position: relative;
+
+
+}
+
+/*Hovers*/
+.fileBtn:hover {
+background: gold;
+color: black;
+}
+
+.blogsBtn:hover {
+background: gold;
+color: black;
+}
+
+.saveBtn:hover {
+background: gold;
+color: black;
+}
+
+.shareBtn:hover {
+background: gold;
+color: black;
+}
+
+
+.publishBtn:hover {
+background: gold;
+color: black;
+cursor: pointer;
+}
+
+
+
+/*end hovers*/
+
+
+
+
+.shareBtn {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.shareBtn:hover, .shareBtn:focus, .shareBtn:active {
+  -webkit-animation-name: shareBtn;
+  animation-name: shareBtn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+}
+
+
+
+/*-------------POP UP BOX FOR SHARE CSS -----------------------*/
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: center;
+
+}
+
+
+/* Modal Content (pop up box)*/
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 10px;
+  border-color: #7F2B29;
+  border-width: 2px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*end close button */
+
+/*------------------- Facebok style---------------------------*/
+.custom-share-button {
+  font-family: 'Courier New';
+  font-size: 30px;
+  background-color: #1E51AA;
+  padding: .4em 1.2em;
+  border-radius: 3px;
+  display: inline-block;
+  border-radius: 25px;
+  margin: 0px 0 10px 0;
+  width: 40%;
+  box-shadow:  1px 2px 2px 1px grey;
+
+
+}
+
+.custom-share-button-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.custom-share-button-label {
+  font-size: .9em;
+  font-weight: 500;
+}
+
+.custom-share-button:hover {
+  background-color: #1432A8;
+  color: white;
+}
+/*---------------------END POP UP FOR SHARE -------------------*/
