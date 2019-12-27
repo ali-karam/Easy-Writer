@@ -1,4 +1,4 @@
-This project requires the following packages to be installed on the server
+This project requires the following packages to be installed on the server <br />
 body-parser <br />
 ejs <br />
 express <br />
